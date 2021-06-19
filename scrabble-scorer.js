@@ -16,7 +16,7 @@ function transform(structure) {
 }
 
 function initialPrompt () {
-  let userInput = input.question(`Welcome to the Scrabble score calculator!\n\nWhich scoring algorithm would you like to use?\n\n0 - Scrabble: The traditional scoring algorithm.\n1 - Simple Score: Each letter is worth 1 point.\n2 - Bonus Vowels: Vowels are worth 3 points, and consonants are 1 point.\n\nEnter 0, 1, or 2: `);
+  let userInput = input.question(`Welcome to the Scrabble score calculator!\n\nWhich scoring algorithm would you like to use?\n\n0 - Scrabble: The traditional scoring algorithm.\n\n1 - Simple Score: Each letter is worth 1 point.\n\n2 - Bonus Vowels: Vowels are worth 3 points, and consonants are 1 point.\n\nEnter 0, 1, or 2: `);
   
   return userInput;
 }
@@ -27,7 +27,7 @@ function initialPrompt () {
 
 function runProgram(arrOne) {
   let prompt = initialPrompt ();
-  console.log(`\nUsing algorithm: ${scoringAlgorithms[prompt].name}`);
+  console.log(`Using algorithm: ${scoringAlgorithms[prompt].name}`);
   func1 = '';
   while (func1 !== 'Stop') {
     let userInput = input.question(`Enter a word to be scored, or 'Stop' to quit: `);
