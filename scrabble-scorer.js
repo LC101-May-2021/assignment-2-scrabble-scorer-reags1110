@@ -27,7 +27,7 @@ function initialPrompt () {
 
 function runProgram(arrOne) {
   let prompt = initialPrompt ();
-  console.log(`Using algorithm: ${scoringAlgorithms[prompt].name}`);
+  console.log(`\n\nUsing algorithm: ${scoringAlgorithms[prompt].name}`);
   func1 = '';
   while (func1 !== 'Stop') {
     let userInput = input.question(`Enter a word to be scored, or 'Stop' to quit: `);
