@@ -27,14 +27,18 @@ let newPointStructure = transform(oldPointStructure);
 let word;
 
 function initialPrompt() {
-  word = input.question(`Welcome to the Scrabble score calculator!\n\nEnter a word to be scored: `);
+  word = input.question(`Welcome to the Scrabble score calculator! Enter a word to be scored: `);
   
   return word;
 }
 
 
 function scorerPrompt() {
-  let userInput = input.question(`Which scoring algorithm would you like to use?\n\n0 - Scrabble: The traditional scoring algorithm.\n\n1 - Simple Score: Each letter is worth 1 point.\n\n2 - Bonus Vowels: Vowels are worth 3 points, and consonants are 1 point.\n\nEnter 0, 1, or 2: `);
+  let userInput = input.question(`Which scoring algorithm would you like to use?
+  \n0 - Scrabble: The traditional scoring algorithm.
+  \n1 - Simple Score: Each letter is worth 1 point.
+  \n2 - Bonus Vowels: Vowels are worth 3 points, and consonants are 1 point.
+  \nEnter 0, 1, or 2: `);
 
   console.log(`Score for '${word}': ${scoringAlgorithms[userInput].scoringFunction(word, newPointStructure)}`); 
   
