@@ -1,4 +1,3 @@
-// inspired by https://exercism.io/tracks/javascript/exercises/etl/solutions/91f99a3cca9548cebe5975d7ebca6a85
 
 const input = require("readline-sync");
 
@@ -27,7 +26,7 @@ let newPointStructure = transform(oldPointStructure);
 let word;
 
 function initialPrompt() {
-  console.log('Welcome to the Scrabble score calculator!');
+  console.log("Let's play some scrabble!\n");
   word = input.question('Enter a word to be scored: ');
   return word;
 }
