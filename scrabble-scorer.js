@@ -94,7 +94,7 @@ let vowelBonusScore = {
 
 scoringAlgorithms = [scrabbleScore, simpleScore, vowelBonusScore];
 
-runProgram(scoringAlgorithms);
+// runProgram(scoringAlgorithms);
 
 
 
