@@ -26,15 +26,20 @@ let newPointStructure = transform(oldPointStructure);
 let word;
 
 function initialPrompt() {
-  console.log("Let's play some scrabble!\n");
+  console.log(`Let's play some scrabble!\n`);
   word = input.question('Enter a word to be scored: ');
   return word;
 }
 
 
 function scorerPrompt() {
-  console.log('\n0 - Scrabble: The traditional scoring algorithm.\n1 - Simple Score: Each letter is worth 1 point.\n2 - Bonus Vowels: Vowels are worth 3 points, and consonants are 1 point.')
-  let userInput = input.question('Which scoring algorithm would you like to use?\nEnter 0, 1, or 2: ');
+  console.log(`Which scoring algorithm would you like to use?\n
+  0 - Scrabble: The traditional scoring algorithm.\n
+  1 - Simple Score: Each letter is worth 1 point.\n
+  2 - Bonus Vowels: Vowels are worth 3 points, and consonants are 1 point.`);
+
+  let userInput = input.question(`Enter 0, 1, or 2: `);
+
   console.log(`Score for '${word}': ${scoringAlgorithms[userInput].scoringFunction(word, newPointStructure)}`); 
   
 }
@@ -44,9 +49,10 @@ function scorerPrompt() {
 // don't change the names or your program won't work as expected. //
 
 function runProgram() {
-  initialPrompt()
-  scorerPrompt()
+  initialPrompt();
+  scorerPrompt();
 }
+
 
 let scrabbleScore = {
   name: "Scrabble",
@@ -64,7 +70,7 @@ let scrabbleScore = {
 let simpleScore = {
   name: "Simple Score",
   description: "Each letter is worth 1 point.",
-  scoringFunction: function(word, object) {
+  scoringFunction: function(word) {
     let points = word.length;
     return points;
   }
@@ -73,7 +79,7 @@ let simpleScore = {
 let vowelBonusScore = {
   name: "Bonus Vowels",
   description: "Vowels are 3 points, and consonants are 1 point.",
-  scoringFunction: function(word, object) {
+  scoringFunction: function(word) {
     let lower = word.toLowerCase();
     let vowelTotal = 0;
     let consTotal = 0;
@@ -94,7 +100,7 @@ let vowelBonusScore = {
 
 scoringAlgorithms = [scrabbleScore, simpleScore, vowelBonusScore];
 
-// runProgram(scoringAlgorithms);
+runProgram(scoringAlgorithms);
 
 
 
@@ -109,6 +115,6 @@ module.exports = {
    scrabbleScore: scrabbleScore,
    scoringAlgorithms: scoringAlgorithms,
    newPointStructure: newPointStructure,
-	runProgram: runProgram,
-	scorerPrompt: scorerPrompt
+	 runProgram: runProgram,
+	 scorerPrompt: scorerPrompt
 };
